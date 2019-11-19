@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ResultModel} from './model/result-model';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AppService} from './services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'hcl-test-project';
+  private appTitle = 'Search Latitude and Longitude';
 }
