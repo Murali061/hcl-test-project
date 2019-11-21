@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ResultModel} from '../model/result-model';
+import {ResultModel} from '../../model/result-model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AppService} from '../services/app.service';
+import {AppService} from '../../services/app.service';
 
 @Component({
   selector: 'app-search',
