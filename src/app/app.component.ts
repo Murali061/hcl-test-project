@@ -1,7 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {ResultModel} from './model/result-model';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AppService} from './services/app.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +6,4 @@ import {AppService} from './services/app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private appTitle = 'Search Latitude and Longitude';
 }

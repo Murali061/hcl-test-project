@@ -4,25 +4,21 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../services/app.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class DashboardComponent implements OnInit {
-  private title = 'hcl-test-project';
+export class SearchComponent implements OnInit {
   private processedResult: ResultModel;
   private cityForm: FormGroup;
   private loading = false;
-  constructor(private appService: AppService) {
-
-  }
-
+  private formError = false;
+  constructor(private appService: AppService) {}
   public ngOnInit(): void {
     this.cityForm = new FormGroup({
       cityName: new FormControl('', Validators.required)
     });
   }
-
   public onSubmit(): void {
     this.resetValues();
     const cityName = this.cityForm.get('cityName').value || '';
@@ -32,6 +28,9 @@ export class DashboardComponent implements OnInit {
         this.processedResult = data;
         this.loading = false;
       });
+      this.formError = false;
+    } else {
+      this.formError = true;
     }
   }
   private resetValues(): void {
